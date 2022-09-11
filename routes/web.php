@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 
 Route::post('/', function (\Illuminate\Http\Request $request) {
-    event(new \App\Events\MessagePushed($request->text));
-    return redirect()->back();
+    event(new \App\Events\MessagePushed($request->message, $request->username));
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

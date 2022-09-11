@@ -1,0 +1,81 @@
+.background
+.usernameScreen{
+    height: 100vh;
+    width: 100vw;
+    background-color: #e2e8f0;
+    position: fixed;
+    .col{
+        height: 100vh;
+        width: 100vw;
+    }
+    input{
+        width: 85%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    button{
+        width: 85%;
+        left: 50%;
+        bottom: 40px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transform: translate(-50%,0);
+    }
+}
+
+.chatScreen{
+    .messages{
+        height: 80vh;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        article{
+            margin: 15px 0;
+            display: inline;
+            width: 60vw;
+            &.home{
+                align-self: flex-end;
+                .content{
+                    background: #0084ff;
+                }
+            }
+            &.away{
+                align-self: start;
+                .content{
+                    background: #cecccc;
+                }
+            }
+            p{
+                margin-bottom: 5px;
+                font-size: 0.8rem;
+            }
+            .content{
+                padding: 15px;
+                border-radius: 5px;
+                color: white;
+            }
+        }
+    }
+    #inputbox{
+        height: calc(20vh - 4rem);
+        width: calc(100% - 4rem);
+        textarea{
+            width: 100%;
+            height: 100%;
+            resize: none;
+            padding: 5px 55px 5px 5px;
+            &:focus{
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+        button{
+            position: absolute;
+            right: 20px;
+            bottom: 15px;
+            font-size: 1.4rem;
+        }
+    }
+}

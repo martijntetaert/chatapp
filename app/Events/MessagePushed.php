@@ -14,16 +14,19 @@ class MessagePushed implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     private $message;
+    private $username;
 // 2
-    public function __construct($message)
+    public function __construct($message, $username)
     {
         $this->message = $message;
+        $this->username = $username;
     }
 // 3
     public function broadcastWith()
     {
         return [
             'message' => $this->message,
+            'username' => $this->username,
         ];
     }
 // 4
